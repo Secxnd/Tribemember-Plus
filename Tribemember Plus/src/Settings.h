@@ -20,6 +20,7 @@ struct {
 			bool DropWood = false;
 			bool DropThatch = false;
 			bool DropFiber = false;
+			bool DropSeeds = false;
 		} DropMats;
 	} FarmBot;
 } Settings;

@@ -58,12 +58,12 @@ void FarmBot() {
 				if (Settings.FarmBot.DropMats.DropWood) DropMaterial("Wood");
 				if (Settings.FarmBot.DropMats.DropThatch) DropMaterial("Thatch");
 				if (Settings.FarmBot.DropMats.DropFiber) DropMaterial("Fiber");
+				if (Settings.FarmBot.DropMats.DropFiber) DropMaterial("Seed");
 
 				Keyboard.PressKey(VK_ESCAPE, 1);
 
 				break;
 			}
-
 		}
 	}
 }
