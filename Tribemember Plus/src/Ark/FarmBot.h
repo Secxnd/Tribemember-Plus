@@ -22,9 +22,9 @@ using namespace N_UHD;
 
 inline void DropMaterial(std::string Name) {
 	Mouse.ClickAt(RemoteSearchbar);
-	std::this_thread::sleep_for(std::chrono::milliseconds(200));
+	std::this_thread::sleep_for(std::chrono::milliseconds(300));
 	Keyboard.Typrewrite(Name);
-	std::this_thread::sleep_for(std::chrono::milliseconds(200));
+	std::this_thread::sleep_for(std::chrono::milliseconds(300));
 	Mouse.ClickAt(ActiveRemoteDropAll.Position);
 }
 

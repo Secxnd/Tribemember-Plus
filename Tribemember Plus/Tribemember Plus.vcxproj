@@ -152,9 +152,11 @@
     <ClCompile Include="src\UI\ImGui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Ark\CropBot.h" />
     <ClInclude Include="src\Ark\FarmBot.h" />
     <ClInclude Include="src\Input\Keyboard.h" />
     <ClInclude Include="src\Input\Mouse.h" />
+    <ClInclude Include="src\Other\Time.h" />
     <ClInclude Include="src\Screen\Resolution.h" />
     <ClInclude Include="src\Screen\Structs.h" />
     <ClInclude Include="src\Settings.h" />

@@ -92,5 +92,11 @@
     <ClInclude Include="src\UI\ImGui\imgui_impl_glfw.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Ark\CropBot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Other\Time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -45,55 +45,76 @@ inline void DoUI() {
 
 		if (ImGui::Begin("TMP", &IsOpen, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove)) {
 
-			if (ImGui::BeginTabBar("Tabs")) {
-				if (ImGui::BeginTabItem("Farm Bot")) {
-					Settings.CurrentTab = 0;
+			if (ImGui::BeginTabBar("Games")) {
+				if (ImGui::BeginTabItem("ASA")) {
+					if (ImGui::BeginTabBar("Tabs")) {
+						if (ImGui::BeginTabItem("Farm Bot")) {
+							Settings.CurrentTab = 0;
 
-					ImGui::Text("F1 - Start | F2 - Stop | You need to use Gamma 5 and have game on English");
-					ImGui::NewLine();
-					ImGui::SliderInt("Seconds Drop Delay", &Settings.FarmBot.DropDelay, 0, 500);
-					ImGui::NewLine();
+							ImGui::Text("F1 - Start | F2 - Stop | You need to use Gamma 5 and have game on English");
+							ImGui::NewLine();
+							ImGui::SliderInt("Seconds Drop Delay", &Settings.FarmBot.DropDelay, 0, 500);
+							ImGui::NewLine();
 
-					ImGui::Checkbox("Drop Stone", &Settings.FarmBot.DropMats.DropStone);
-					ImGui::Checkbox("Drop Flint", &Settings.FarmBot.DropMats.DropFlint);
-					ImGui::Checkbox("Drop Metal", &Settings.FarmBot.DropMats.DropMetal);
-					ImGui::Checkbox("Drop Obsidian", &Settings.FarmBot.DropMats.DropObsidian);
-					ImGui::Checkbox("Drop Crystal", &Settings.FarmBot.DropMats.DropCrystal);
-					ImGui::Checkbox("Drop Mushrooms", &Settings.FarmBot.DropMats.DropMushrooms);
-					ImGui::Checkbox("Drop Flowers", &Settings.FarmBot.DropMats.DropFlowers);
-					ImGui::Checkbox("Drop Berries", &Settings.FarmBot.DropMats.DropBerries);
-					ImGui::Checkbox("Drop Wood", &Settings.FarmBot.DropMats.DropWood);
-					ImGui::Checkbox("Drop Thatch", &Settings.FarmBot.DropMats.DropThatch);
-					ImGui::Checkbox("Drop Fiber", &Settings.FarmBot.DropMats.DropFiber);
-					ImGui::Checkbox("Drop Seeds", &Settings.FarmBot.DropMats.DropSeeds);
+							ImGui::Checkbox("Drop Stone", &Settings.FarmBot.DropMats.DropStone);
+							ImGui::Checkbox("Drop Flint", &Settings.FarmBot.DropMats.DropFlint);
+							ImGui::Checkbox("Drop Metal", &Settings.FarmBot.DropMats.DropMetal);
+							ImGui::Checkbox("Drop Obsidian", &Settings.FarmBot.DropMats.DropObsidian);
+							ImGui::Checkbox("Drop Crystal", &Settings.FarmBot.DropMats.DropCrystal);
+							ImGui::Checkbox("Drop Mushrooms", &Settings.FarmBot.DropMats.DropMushrooms);
+							ImGui::Checkbox("Drop Flowers", &Settings.FarmBot.DropMats.DropFlowers);
+							ImGui::Checkbox("Drop Berries", &Settings.FarmBot.DropMats.DropBerries);
+							ImGui::Checkbox("Drop Wood", &Settings.FarmBot.DropMats.DropWood);
+							ImGui::Checkbox("Drop Thatch", &Settings.FarmBot.DropMats.DropThatch);
+							ImGui::Checkbox("Drop Fiber", &Settings.FarmBot.DropMats.DropFiber);
+							ImGui::Checkbox("Drop Seeds", &Settings.FarmBot.DropMats.DropSeeds);
 
+							ImGui::EndTabItem();
+						}
+						if (ImGui::BeginTabItem("Crop Bot")) {
+							Settings.CurrentTab = 1;
+
+							ImGui::Text("Not Usable yet.");
+							ImGui::Text("F1 - Start | F2 - Stop | You need to use Gamma 5 and have game on English");
+							ImGui::NewLine();
+							ImGui::SliderInt("Crop Stations", &Settings.CropBot.CropsPerRow, 0, 100);
+							ImGui::NewLine();
+
+							ImGui::Checkbox("Notify on Full Fridges", &Settings.CropBot.NotifyOnFullFridges);
+							ImGui::InputText("Webhook", Settings.CropBot.CropBotWebhook, IM_ARRAYSIZE(Settings.CropBot.CropBotWebhook));
+							ImGui::NewLine();
+							ImGui::NewLine();
+							ImGui::NewLine();
+
+							ImGui::Text("Status: %d", Settings.CropBot.Enable);
+
+							ImGui::EndTabItem();
+						}
+						if (ImGui::BeginTabItem("Paste Bot")) {
+							Settings.CurrentTab = 2;
+
+							ImGui::Text("F1 - Start | F2 - Stop | You need to use Gamma 5 and have game on English");
+							ImGui::NewLine();
+							ImGui::SliderInt("Stations", &Settings.CropBot.CropsPerRow, 0, 50);
+							ImGui::NewLine();
+
+							ImGui::Checkbox("Notify on Full Fridges", &Settings.CropBot.NotifyOnFullFridges);
+							ImGui::InputText("Webhook", Settings.CropBot.CropBotWebhook, IM_ARRAYSIZE(Settings.CropBot.CropBotWebhook));
+
+							ImGui::EndTabItem();
+						}
+						ImGui::EndTabBar();
+					}
 					ImGui::EndTabItem();
 				}
-				if (ImGui::BeginTabItem("Crop Bot")) {
-					Settings.CurrentTab = 1;
-
-					ImGui::Text("F1 - Start | F2 - Stop | You need to use Gamma 5 and have game on English");
-					ImGui::NewLine();
-					ImGui::SliderInt("Seconds Drop Delay", &Settings.FarmBot.DropDelay, 0, 500);
-					ImGui::NewLine();
-
-					ImGui::Checkbox("Drop Stone", &Settings.FarmBot.DropMats.DropStone);
-					ImGui::Checkbox("Drop Flint", &Settings.FarmBot.DropMats.DropFlint);
-					ImGui::Checkbox("Drop Metal", &Settings.FarmBot.DropMats.DropMetal);
-					ImGui::Checkbox("Drop Obsidian", &Settings.FarmBot.DropMats.DropObsidian);
-					ImGui::Checkbox("Drop Crystal", &Settings.FarmBot.DropMats.DropCrystal);
-					ImGui::Checkbox("Drop Mushrooms", &Settings.FarmBot.DropMats.DropMushrooms);
-					ImGui::Checkbox("Drop Flowers", &Settings.FarmBot.DropMats.DropFlowers);
-					ImGui::Checkbox("Drop Berries", &Settings.FarmBot.DropMats.DropBerries);
-					ImGui::Checkbox("Drop Wood", &Settings.FarmBot.DropMats.DropWood);
-					ImGui::Checkbox("Drop Thatch", &Settings.FarmBot.DropMats.DropThatch);
-					ImGui::Checkbox("Drop Fiber", &Settings.FarmBot.DropMats.DropFiber);
-					ImGui::Checkbox("Drop Seeds", &Settings.FarmBot.DropMats.DropSeeds);
+				if (ImGui::BeginTabItem("ASE")) {
+					ImGui::Text("Soon");
 
 					ImGui::EndTabItem();
 				}
 				ImGui::EndTabBar();
 			}
+			
 			
 			ImGui::End();
 		}

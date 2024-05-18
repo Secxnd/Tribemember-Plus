@@ -51,6 +51,12 @@ namespace N_UWQHD {
 	Icon ActiveRemoteAutoStack(Vector2D(2530, 261), rgb(14, 196, 214));
 
 	Vector2D RemoteSearchbar(2139, 265);
+
+	Vector2D SpawnScreenSearchBar(1017, 1291);
+	Icon SpawnScreenFirstBed(Vector2D(868, 294), rgb(189, 142, 55));
+	Vector2D SpawnScreenSpawnAt(2643, 1279);
+
+	Vector2D LayOnBed(2056, 737);
 }
 
 namespace N_UHD {

@@ -23,4 +23,15 @@ struct {
 			bool DropSeeds = false;
 		} DropMats;
 	} FarmBot;
+	
+	struct {
+		bool Enable = false;
+		bool FirstRun = true;
+
+		int CropsPerRow = 10;
+		int Rows = 5;
+
+		bool NotifyOnFullFridges = false;
+		char CropBotWebhook[256] = "";
+	} CropBot;
 } Settings;
